@@ -43,21 +43,21 @@ describe("Tier 1: SinglePet component", () => {
     species: "dog"
   }
 
-  xit("renders a pet's name, description, and species passed in as props", () => {
+  it("renders a pet's name, description, and species passed in as props", () => {
     const wrapper = mount(<SinglePet pet={rigatoni} />)
     expect(wrapper.text()).to.contain("Rigatoni")
     expect(wrapper.text()).to.contain("A flaming hot cheetoh in feline form")
     expect(wrapper.text()).to.contain("cat")
   })
 
-  xit("renders different name, description, and species if passed different props", () => {
+  it("renders different name, description, and species if passed different props", () => {
     const wrapper = mount(<SinglePet pet={cody} />)
     expect(wrapper.text()).to.contain("Cody")
     expect(wrapper.text()).to.contain("Adorable pug who loves to hug")
     expect(wrapper.text()).to.contain("dog")
   })
 
-  xit("renders a 'Toggle Adopted' button", () => {
+  it("renders a 'Toggle Adopted' button", () => {
     // The button doesn't need to "do anything" just yet. See the next test.
     const wrapper = mount(<SinglePet pet={rigatoni} />)
 
@@ -67,7 +67,7 @@ describe("Tier 1: SinglePet component", () => {
     ).to.equal(true)
   })
 
-  xit("the 'Toggle Adopted' button toggles the pet's adopted status", () => {
+  it("the 'Toggle Adopted' button toggles the pet's adopted status", () => {
     const wrapper = mount(<SinglePet pet={rigatoni} />)
     const toggleAdoptedButton = wrapper.findWhere(node => {
       return node.type() === "button" && node.text() === "Toggle Adopted"
